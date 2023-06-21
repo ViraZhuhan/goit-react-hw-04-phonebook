@@ -18,7 +18,7 @@ const defaultContacts = [
 
 export default function App() {
   const [filter, setFilter] = useState('');
-  const [contacts, setContacts] = useLocalStorage('contact', defaultContacts);
+  const [contacts, setContacts] = useLocalStorage('contacts', defaultContacts);
 
   const formSubmitData = ({ name, number }) => {
     const isFindName = contacts.find(
@@ -28,7 +28,8 @@ export default function App() {
     if (isFindName) {
       alert(`${name} is already in contacts !`);
       return;
-    } else {
+    } 
+    else {
       const newContacts = {
         id: nanoid(),
         name,
